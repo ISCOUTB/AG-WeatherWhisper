@@ -13,3 +13,149 @@ Criterios de Aceptación:
     * Las recomendaciones deben actualizarse dinámicamente a medida que cambian las condiciones meteorológicas.
 5. Interfaz Intuitiva:
     * Las sugerencias y recomendaciones deben ser presentadas de manera clara y fácil de entender dentro de la aplicación.
+Tareas
+Categorizar Condiciones Climáticas
+Tarea 1.1: Implementar la función para obtener los datos meteorológicos actuales (temperatura, humedad, etc.) de una API de clima.
+Tarea 1.2: Desarrollar un módulo para interpretar los datos de temperatura y categorizar las condiciones en frío, calor, templado, etc.
+Tarea 1.3: Crear un sistema de reglas para definir los umbrales de temperatura para cada categoría climática.
+Tarea 1.4: Validar que la categorización de las condiciones climáticas sea precisa y consistente con las expectativas.
+Recomendaciones Basadas en Condiciones Climáticas
+Tarea 2.1: Definir un conjunto de recomendaciones estándar para cada categoría climática (vestimenta, calzado, precauciones).
+Tarea 2.2: Crear un motor de recomendaciones que seleccione y ajuste las sugerencias basadas en la categoría climática actual.
+Tarea 2.3: Implementar una lógica para personalizar las recomendaciones según el perfil del usuario.
+Tarea 2.4: Probar las recomendaciones para asegurar que son relevantes y adecuadas para cada categoría climática.
+3. Ajuste a Perfiles de Usuario
+Tarea 3.1: Implementar un sistema para gestionar perfiles de usuario y sus preferencias (ubicación, sensibilidad al frío/calor, etc.).
+Tarea 3.2: Integrar el ajuste de recomendaciones con base en la ubicación del usuario y otros factores específicos de su perfil.
+Tarea 3.3: Permitir a los usuarios personalizar sus preferencias y ajustar las recomendaciones según sus necesidades.
+4. Adaptación Dinámica
+Tarea 4.1: Desarrollar una funcionalidad para actualizar los datos meteorológicos en tiempo real(con margen de 15m).
+Tarea 4.2: Implementar una lógica para recalcular y ajustar las recomendaciones dinámicamente en función de los cambios en las condiciones meteorológicas.
+Tarea 4.3: Realizar pruebas para asegurar que las actualizaciones dinámicas son precisas y se aplican sin errores.
+5. Interfaz Intuitiva
+Tarea 5.1: Diseñar una interfaz de usuario para mostrar las recomendaciones de manera clara y accesible.
+Tarea 5.2: Implementar las pantallas y elementos de la interfaz para presentar las sugerencias de vestimenta, calzado y precauciones.
+Tarea 5.3: Realizar pruebas de usabilidad para asegurar que la interfaz es intuitiva y fácil de entender para los usuarios.
+Tarea 5.4: Incorporar retroalimentación de usuarios para realizar mejoras en la presentación de las recomendaciones.
+
+Historia de Usuario: Generación de Recomendaciones Personalizadas
+Como usuario de la aplicación meteorológica,
+Quiero que la aplicación genere recomendaciones personalizadas sobre vestimenta, calzado y precauciones,
+Para que pueda estar adecuadamente preparado para las condiciones climáticas actuales y las condiciones del terreno.
+Criterios de Aceptación:
+Recomendaciones de Vestimenta:
+La aplicación debe sugerir prendas adecuadas para la temperatura actual. Por ejemplo, si la temperatura es baja, debe recomendar usar un abrigo; si es alta, sugerir una camiseta.
+Recomendaciones de Calzado:
+La aplicación debe ofrecer recomendaciones de calzado basadas en las condiciones del terreno y el clima. Por ejemplo, si hay lluvia, debe recomendar zapatos impermeables.
+Sugerencias Adicionales:
+La aplicación debe proporcionar sugerencias adicionales según las condiciones climáticas. Por ejemplo, debe recomendar el uso de protector solar en días soleados o un paraguas en caso de lluvia.
+Tareas
+Recomendaciones de Vestimenta
+Tarea 1.1: Definir categorías de vestimenta en función de los rangos de temperatura (e.g., abrigo, suéter, camiseta).
+Tarea 1.2: Implementar una lógica que asocie las categorías de vestimenta con las temperaturas actuales recibidas de la API meteorológica.
+Tarea 1.3: Desarrollar un sistema para mapear las recomendaciones de vestimenta a la interfaz de usuario.
+Tarea 1.4: Probar la precisión y relevancia de las recomendaciones de vestimenta para diversas condiciones de temperatura.
+2. Recomendaciones de Calzado
+Tarea 2.1: Identificar las condiciones del terreno que afectan la elección del calzado (e.g., lluvia, nieve, terreno seco).
+Tarea 2.2: Crear un conjunto de recomendaciones de calzado basadas en las condiciones del terreno y el clima.
+Tarea 2.3: Implementar la lógica que sugiere el calzado adecuado según las condiciones meteorológicas y del terreno.
+Tarea 2.4: Validar las recomendaciones de calzado mediante pruebas en diferentes escenarios meteorológicos y de terreno.
+3. Sugerencias Adicionales
+Tarea 3.1: Identificar factores adicionales que requieran recomendaciones (e.g., protector solar en días soleados, paraguas en días lluviosos).
+Tarea 3.2: Desarrollar un conjunto de sugerencias adicionales basado en estos factores.
+Tarea 3.3: Implementar la lógica para ofrecer sugerencias adicionales en función de las condiciones climáticas específicas.
+Tarea 3.4: Probar la exactitud y utilidad de las sugerencias adicionales en diversos contextos climáticos.
+4. Integración y Presentación en la Interfaz
+Tarea 4.1: Diseñar y desarrollar la interfaz de usuario para mostrar las recomendaciones de vestimenta, calzado y sugerencias adicionales de manera clara.
+Tarea 4.2: Implementar los elementos de la interfaz que mostrarán las recomendaciones basadas en las condiciones actuales.
+Tarea 4.3: Asegurar que las recomendaciones sean fácilmente accesibles y comprensibles para el usuario.
+Tarea 4.4: Realizar pruebas de usabilidad para verificar que la presentación de las recomendaciones sea intuitiva y efectiva.
+5. Pruebas y Validación
+Tarea 5.1: Desarrollar y ejecutar pruebas unitarias para cada módulo de recomendación (vestimenta, calzado, sugerencias adicionales).
+Tarea 5.2: Realizar pruebas de integración para asegurar que todas las recomendaciones se generen y presenten correctamente en la aplicación.
+Tarea 5.3: Recoger y analizar retroalimentación de los usuarios para ajustar y mejorar las recomendaciones y su presentación.
+
+Historia de Usuario: Acceso Intuitivo a Recomendaciones Basadas en Ubicación y Clima
+Como usuario de la aplicación,
+Quiero tener acceso a una pantalla principal que me muestre recomendaciones basadas en mi ubicación y el clima actual,
+Para que pueda encontrar rápidamente sugerencias relevantes y útiles sin complicaciones.
+Criterios de Aceptación:
+Pantalla Principal:
+La pantalla principal debe mostrar recomendaciones personalizadas basadas en la ubicación actual del usuario y las condiciones climáticas.
+Las recomendaciones deben presentarse de manera clara y destacada, con información relevante como el nombre del lugar o actividad, una breve descripción, y una imagen representativa.
+Cambio Manual de Ubicación:
+Debe haber una opción visible y accesible para cambiar manualmente la ubicación. Esto puede ser un botón o un campo de búsqueda donde el usuario pueda ingresar una nueva ubicación.
+Al cambiar la ubicación, la pantalla principal debe actualizarse automáticamente para mostrar recomendaciones basadas en la nueva ubicación ingresada.
+Actualización de Datos:
+Debe haber un botón de actualización visible que permita al usuario actualizar los datos de ubicación y clima manualmente.
+La actualización debe ser rápida y eficiente, reflejando los datos más recientes sin necesidad de recargar la aplicación.
+Adaptabilidad:
+La interfaz debe ser responsiva y adaptarse adecuadamente a diferentes tamaños de pantalla, tanto en dispositivos móviles como en escritorios.
+En dispositivos móviles, los elementos deben ser accesibles con una sola mano y el diseño debe ser claro y fácil de navegar.
+En escritorios, la interfaz debe aprovechar el espacio adicional para proporcionar una experiencia de usuario fluida y bien organizada.
+Tareas
+Diseño de la Pantalla Principal
+Tarea 1.1: Diseñar un wireframe de la pantalla principal que incluya secciones para las recomendaciones basadas en ubicación y clima.
+Tarea 1.2: Crear prototipos visuales de la pantalla principal mostrando cómo se presentarán las recomendaciones con nombre, descripción e imagen.
+Tarea 1.3: Revisar el diseño con el equipo y hacer ajustes según el feedback recibido.
+2. Implementación de Recomendaciones Basadas en Ubicación y Clima
+Tarea 2.1: Integrar una API de geolocalización para obtener la ubicación actual del usuario.
+Tarea 2.2: Implementar una API de clima para obtener las condiciones meteorológicas actuales.
+Tarea 2.3: Desarrollar el backend para combinar los datos de ubicación y clima con las recomendaciones disponibles.
+Tarea 2.4: Crear un módulo en la pantalla principal que muestre recomendaciones basadas en la ubicación y clima actuales del usuario.
+3. Funcionalidad para Cambio Manual de Ubicación
+Tarea 3.1: Implementar un botón o campo de búsqueda visible para que el usuario pueda ingresar una nueva ubicación.
+Tarea 3.2: Desarrollar la funcionalidad para actualizar la ubicación y recargar las recomendaciones basadas en la nueva ubicación.
+Tarea 3.3: Asegurarse de que el cambio de ubicación sea reflejado en la pantalla principal sin recargar la aplicación completa.
+
+Historia de Usuario: Gestión de Usuarios
+Como usuario de la aplicación,
+Quiero poder registrarme, iniciar sesión y gestionar mi perfil,
+Para personalizar mi experiencia en la aplicación, acceder a mis preferencias y datos guardados de manera segura.
+Criterios de Aceptación:
+Registro e Inicio de Sesión:
+Registro:
+Los usuarios deben poder crear una cuenta utilizando su correo electrónico o mediante redes sociales (por ejemplo, Facebook, Google).
+Durante el registro, la aplicación debe validar el correo electrónico y asegurarse de que el usuario complete todos los campos necesarios.
+Inicio de Sesión:
+Los usuarios deben poder iniciar sesión utilizando su correo electrónico o redes sociales.
+Debe haber una opción para recuperar la contraseña en caso de olvido.
+La aplicación debe proporcionar mensajes claros en caso de errores durante el inicio de sesión (por ejemplo, credenciales incorrectas).
+Perfil de Usuario:
+Configuración del Perfil:
+Cada usuario debe tener un perfil donde pueda configurar sus preferencias, tales como:
+Sensibilidad al frío/calor.
+Tipo de actividad diaria (ejemplo: ejercicio, trabajo al aire libre).
+Los usuarios deben poder actualizar su información personal y preferencias en cualquier momento.
+La aplicación debe permitir la carga y actualización de una foto de perfil.
+Obtención Automática de Ubicación:
+Protección de Datos:
+Los datos personales y de ubicación deben ser almacenados y manejados siguiendo las mejores prácticas de seguridad y políticas de privacidad.
+La aplicación debe implementar cifrado para proteger los datos sensibles durante la transmisión y almacenamiento.
+Políticas de Privacidad:
+Los usuarios deben ser informados sobre cómo se utilizarán sus datos personales y de ubicación.
+Debe haber una política de privacidad claramente accesible y comprensible.
+Tareas
+Diseño y Prototipo
+Tarea 1.1: Diseñar las pantallas de registro e inicio de sesión.
+Crear wireframes y prototipos visuales para el registro, inicio de sesión, y recuperación de contraseña.
+Incluir opciones para registro mediante correo electrónico y redes sociales.
+Tarea 1.2: Diseñar la pantalla de perfil de usuario.
+Incluir secciones para configurar preferencias (sensibilidad al frío/calor, tipo de actividad diaria) y cargar una foto de perfil.
+Tarea 1.3: Diseñar la interfaz para la obtención y entrada manual de ubicación.
+Crear prototipos para la solicitud de permisos de ubicación y el campo de búsqueda o mapa para ingreso manual.
+2. Desarrollo
+Tarea 2.1: Implementar el módulo de registro e inicio de sesión.
+Desarrollar formularios para registro e inicio de sesión.
+Integrar autenticación por correo electrónico y redes sociales.
+Implementar recuperación de contraseña.
+Tarea 2.2: Implementar la funcionalidad de perfil de usuario.
+Desarrollar funcionalidades para actualizar preferencias del usuario y foto de perfil.
+Crear un backend para almacenar y recuperar preferencias del usuario.
+Tarea 2.3: Implementar la obtención automática de ubicación.
+Integrar servicios de geolocalización y solicitar permisos de ubicación.
+Implementar funcionalidad para la entrada manual de ubicación si el permiso no es concedido.
+Tarea 2.4: Implementar el almacenamiento y gestión de preferencias del usuario.
+Desarrollar la lógica para guardar y recuperar preferencias del usuario de manera segura.
+Tarea 2.5: Implementar medidas de seguridad y privacidad.
+Asegurar el cifrado de datos sensibles y el cumplimiento de políticas de privacidad.

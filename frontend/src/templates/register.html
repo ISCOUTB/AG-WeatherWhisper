@@ -16,11 +16,11 @@
     <div class="background">
         <div class="container">
             <div class="logo">
-                <img src="cloud-sun.png" alt="WeatherWhisper Logo" class="logo-img">
+                <img src="static/images/cloud-sun.png" alt="WeatherWhisper Logo" class="logo-img">
                 <h1 class="logo-text">WeatherWhisper</h1>
             </div>
 
-            <form class="form-container">
+            <form class="form-container" method="POST" action="/register">
                 <h2>Create an account</h2>
                 <div class="input-row">
                     <div class="input-group">
@@ -38,13 +38,14 @@
                         <input type="password" id="password" name="password" placeholder="********" required>
                     </div>
                     <div class="input-group">
-                        <label for="phone">Phone</label>
-                        <input type="phone" id="phone" name="phone" placeholder="+  ()-000-0000" required>
+                        <label for="phone_number">Phone</label>
+                        <input type="text" id="phone_number" name="phone_number" placeholder="+57 ()-000-0000" required>
                     </div>
                 </div>
                 <button type="submit" class="register-btn">REGISTER</button>
                 <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a></p>
             </form>
+            
         </div>
     </div>
 </body>

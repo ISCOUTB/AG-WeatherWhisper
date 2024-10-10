@@ -16,7 +16,7 @@
     <div class="background">
         <div class="container">
             <div class="logo">
-                <img src="cloud-sun.png" alt="WeatherWhisper Logo" class="logo-img">
+                <img src="static/images/cloud-sun.png" alt="WeatherWhisper Logo" class="logo-img">
                 <h1 class="logo-text">WeatherWhisper</h1>
             </div>
 
@@ -31,7 +31,10 @@
                     <input type="password" id="password" name="password" placeholder="********" required>
                 </div>
                 <button type="submit" class="login-btn">LOGIN</button>
-                <p>Don't have an account? <a href="/register.html">Create one</a></p>
+                <p>¿No tienes una cuenta? <a href="/register">Crea aquí</a></p>
+                {% if error %}
+                    <p style="color:red;">{{ error }}</p>  <!-- Mostrar mensaje de error -->
+                {%endif %}
             </form>
         </div>
     </div>

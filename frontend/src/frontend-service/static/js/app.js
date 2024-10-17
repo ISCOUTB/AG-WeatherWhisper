@@ -4,8 +4,8 @@ document.getElementById('city-search-form').addEventListener('submit', function(
     const city = document.getElementById('city-input').value;
 
     // Hacer la solicitud a la API
-    fetch(`/recommendation?city=${city}`)
-        .then(response => response.json())
+    fetch(`http://localhost:5000/recommendation?city=${city}`)
+    .then(response => response.json())
         .then(data => {
             if (data.error) {
                 alert(data.error); // Mostrar un mensaje de error si hay problemas con la API

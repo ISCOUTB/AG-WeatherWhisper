@@ -31,7 +31,7 @@
                     <input type="password" id="password" name="password" placeholder="********" required>
                 </div>
                 <button type="submit" class="login-btn">LOGIN</button>
-                <p>¿No tienes una cuenta? <a href="/register">Crea aquí</a></p>
+                <p>¿No tienes una cuenta? <a href="{{ url_for('register') }}">Crea aquí</a></p>
                 {% if error %}
                     <p style="color:red;">{{ error }}</p>  <!-- Mostrar mensaje de error -->
                 {%endif %}

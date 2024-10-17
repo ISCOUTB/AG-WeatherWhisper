@@ -21,16 +21,16 @@
         </form>
 
         <div class="city-name">
-            <h1 id="city-name">Cartagena de Indias</h1>
+            <h1 id="city-name">---------</h1>
             <p id="weather-description">Nublado</p>
         </div>
         <div class="temperature">
-            <h2 id="temperature">21°</h2>
+            <h2 id="temperature">--</h2>
         </div>
         <div class="forecast-container">
-            <div class="uv-index">
+            <div class="uvIndex">
                 <h3>Índice UV</h3>
-                <p id="uv-index">--</p>
+                <p id="uvIndex">--</p>
             </div>
             <div class="humidity">
                 <h3>Humedad</h3>
@@ -58,11 +58,15 @@
                         // Limpiar los datos anteriores (opcional, por si queda algo mal)
                         document.getElementById("city-name").textContent = "";
                         document.getElementById("temperature").textContent = "";
+                        document.getElementById("uvIndex").textContent = "";
+                        document.getElementById("humidity").textContent = "";
                         document.getElementById("recommendation").textContent = "";
     
                         // Actualizar la información con los nuevos datos
                         document.getElementById("city-name").textContent = data.city;
                         document.getElementById("temperature").textContent = `${data.temperature}°`;
+                        document.getElementById("uvIndex").textContent = `${data.uvIndex}`;
+                        document.getElementById("humidity").textContent = `${data.humidity}%`;
                         document.getElementById("recommendation").textContent = data.recommendation;
                     }
                 })

@@ -10,8 +10,11 @@ RUN pip install --upgrade pip
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
+EXPOSE 5000
+
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "src/app.py"]
+CMD ["python", "app.py"]

@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, redirect,url_for
 from auth_db import register_user, validate_user
-from flask_cors import CORS  # Importa CORS
+from flask_cors import CORS  
 
 app = Flask(__name__)
 CORS(app)

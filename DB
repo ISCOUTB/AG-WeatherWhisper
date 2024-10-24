@@ -1,0 +1,70 @@
+create table users (
+  id bigint primary key generated always as identity,
+  name text not null,
+  email text unique not null,
+  location text,
+  preferred_temperature_unit text check (
+    preferred_temperature_unit in ('Celsius', 'Fahrenheit')
+  ),
+  receive_weather_alerts boolean default true
+);
+
+alter table users
+add column password text not null;
+
+alter table users
+add column phone_number text;
+
+alter table users
+add column age int;
+
+alter table users
+drop preferred_temperature_unit;
+
+alter table users
+drop receive_weather_alerts;
+
+create table user_weather_preferences (
+  id bigint primary key generated always as identity,
+  user_id bigint not null references users (id),
+  temperature_unit text check (temperature_unit in ('Celsius', 'Fahrenheit')),
+  receive_alerts boolean default true,
+  preferred_conditions text
+);
+
+create table user_locations (
+  id bigint primary key generated always as identity,
+  user_id bigint not null references users (id),
+  latitude double precision not null,
+  longitude double precision not null,
+  address text
+);
+
+create table user_settings (
+  id bigint primary key generated always as identity,
+  user_id bigint not null references users (id),
+  theme text check (theme in ('light', 'dark')) default 'light',
+  notifications_enabled boolean default true,
+  language text default 'en'
+);
+
+alter table users
+drop location;
+
+alter table user_settings
+rename column theme to temperature_unit;
+
+alter table user_settings
+drop notifications_enabled;
+
+alter table user_settings
+rename column id to id_settings;
+
+alter table user_locations
+rename column id to id_location;
+
+alter table user_weather_preferences
+rename column id to id_preferences;
+
+alter table users
+rename column id to user_id;

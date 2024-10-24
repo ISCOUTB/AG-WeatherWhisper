@@ -23,3 +23,8 @@ services:
     image: recommendation-service
     ports:
       - "5002:5002"  
+
+networks:
+  default:
+    name: weather-app-network
+

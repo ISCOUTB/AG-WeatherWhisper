@@ -1,18 +1,16 @@
-import pyodbc
-import bcrypt
+import mysql.connector
 
-# Conexión a la base de datos Microsoft SQL Server
+# Conexión a la base de datos MySQL
 def get_db_connection():
     try:
-        connection = pyodbc.connect(
-            'DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=weatherwishperapp.database.windows.net;'
-            'DATABASE=weatherwhisper;'
-            'UID=rootw;'
-            'PWD=Vialmar7;'
+        connection = mysql.connector.connect(
+            host="localhost",
+            database="weatherwhisper",
+            user="root",
+            password="victormt26.2024"
         )
         return connection
-    except Exception as e:
+    except mysql.connector.Error as e:
         print("Error al conectarse a la base de datos:", e)
         return None
 
@@ -20,19 +18,18 @@ def get_db_connection():
 def register_user(name, email, password, phone_number):
     conn = get_db_connection()
     if conn is None:
-        return False  # Si no hay conexión, regresar False
+        return False
 
     cursor = conn.cursor()
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
     try:
         cursor.execute(
-            "INSERT INTO users (name, email, password, phone_number) VALUES (?, ?, ?, ?)", 
-            (name, email, hashed_password, phone_number)
+            "INSERT INTO users (name, email, password, phone_number) VALUES (%s, %s, %s, %s)", 
+            (name, email, password, phone_number)  # Almacena la contraseña en texto plano
         )
         conn.commit()
-        return True  # Registro exitoso
-    except Exception as e:
+        return True
+    except mysql.connector.Error as e:
         print("Error al registrar el usuario:", e)
         return False
     finally:
@@ -40,17 +37,24 @@ def register_user(name, email, password, phone_number):
         conn.close()
 
 # Validación de usuario al iniciar sesión
-def validate_user(name, password):
+def validate_user(email, password):
     conn = get_db_connection()
     if conn is None:
-        return False  # Si no hay conexión, regresar False
+        return False
 
     cursor = conn.cursor()
-    cursor.execute("SELECT password FROM users WHERE name = ?", (name,))
-    user = cursor.fetchone()
-    cursor.close()
-    conn.close()
+    try:
+        cursor.execute("SELECT password FROM users WHERE email = %s", (email,))
+        user = cursor.fetchone()
+       
 
-    if user and bcrypt.checkpw(password.encode('utf-8'), user[0]):
-        return True
-    return False
+        if user and user[0].decode('utf-8') == password:
+            return True
+        return False
+    except mysql.connector.Error as e:
+        print("Error al validar el usuario:", e)
+        return False
+    finally:
+        cursor.close()
+        conn.close()
+
